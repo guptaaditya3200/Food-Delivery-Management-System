@@ -54,4 +54,25 @@ public class CollectionUtil {
         }
     }
 
+    public static User getUserById(String id) {
+        return users.get(id);
+    }
+
+    // Inventory operations
+    public static Map<FoodItem, Integer> getInventory() {
+        return inventory;
+    }
+
+    public static void addFoodItem(FoodItem item, int quantity) {
+        inventory.put(item, inventory.getOrDefault(item, 0) + quantity);
+    }
+
+    public static boolean updateInventory(FoodItem item, int quantity) {
+        if (inventory.containsKey(item) && inventory.get(item) >= quantity) {
+            inventory.put(item, inventory.get(item) - quantity);
+            return true;
+        }
+        return false;
+    }
+
 }
