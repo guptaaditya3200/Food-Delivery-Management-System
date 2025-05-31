@@ -94,6 +94,12 @@ public class CollectionUtil {
         customers.clear();
         deliveryPersons.clear();
         inventory.clear();
+        orders.clear();
+        // Re-add default manager
+        User defaultManager = new User("MGR001", "System Manager", "manager@system.com", "9999999999", "admin123",
+                "MANAGER");
+        managers.put(defaultManager.getId(), defaultManager);
+        users.put(defaultManager.getId(), defaultManager);
 
     }
 }
