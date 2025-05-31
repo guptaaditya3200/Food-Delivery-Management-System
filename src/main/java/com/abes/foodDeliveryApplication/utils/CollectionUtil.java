@@ -16,8 +16,8 @@ public class CollectionUtil {
 
     // Static initialization with default manager
     static {
-        User defaultManager = new User("MGR001", "System Manager", "manager@system.com",
-                "9999999999", "admin123", "MANAGER");
+        User defaultManager = new User("M001", "Rayush", "rayush@gmail.com",
+                "8840414007", "123456789", "MANAGER");
         managers.put(defaultManager.getId(), defaultManager);
         users.put(defaultManager.getId(), defaultManager);
     }
