@@ -75,4 +75,17 @@ public class CollectionUtil {
         return false;
     }
 
+    // Order operations
+    public static Map<String, Order> getOrders() {
+        return orders;
+    }
+
+    public static void addOrder(Order order) {
+        orders.put(order.getOrderId(), order);
+    }
+
+    public static Order getOrderById(String orderId) {
+        return orders.get(orderId);
+    }
+
 }
