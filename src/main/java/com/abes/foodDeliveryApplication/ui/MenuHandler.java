@@ -1,16 +1,16 @@
-package com.cg.ui;
+package com.abes.foodDeliveryApplication.ui;
 
-import com.cg.dto.User;
-import com.cg.dto.FoodItem;
-import com.cg.dto.Order;
-import com.cg.services.*;
-import com.cg.exception.*;
-import com.cg.utils.InputValidator;
+import com.abes.foodDeliveryApplication.dto.User;
+import com.abes.foodDeliveryApplication.dto.FoodItem;
+import com.abes.foodDeliveryApplication.dto.Order;
+import com.abes.foodDeliveryApplication.services.*;
+import com.abes.foodDeliveryApplication.exception.*;
+import com.abes.foodDeliveryApplication.utils.InputValidator;
 import java.util.*;
 
 public class MenuHandler {
     private final Scanner scanner;
-    private final UserService userService;
+    private final UserService s;
     private final FoodService foodService;
     private final OrderService orderService;
     private final ManagerService managerService;
