@@ -33,13 +33,5 @@ public class OrderDaoImpl implements OrderDao {
                 .collect(Collectors.toList());
     }
     
-    @Override
-    public void updateOrder(Order order) {
-        CollectionUtil.addOrder(order);
-    }
-    @Override
-    public List<Order> getAllOrders() {
-        Map<String, Order> orders = CollectionUtil.getOrders();
-        return orders.values().stream().collect(Collectors.toList());
-    }
+   
 }
