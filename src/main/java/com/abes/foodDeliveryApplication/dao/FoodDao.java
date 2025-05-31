@@ -8,5 +8,5 @@ public interface FoodDao {
     Map<FoodItem, Integer> getAllFoodItems();
     FoodItem getFoodItemByName(String name);
     boolean updateInventory(FoodItem item, int quantity);
-    void restockItem(String itemName, int quantity);
+    void restockItem(String itemName, int quantity);
 }
