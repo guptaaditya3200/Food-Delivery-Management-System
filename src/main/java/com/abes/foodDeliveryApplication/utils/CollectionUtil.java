@@ -22,4 +22,36 @@ public class CollectionUtil {
         users.put(defaultManager.getId(), defaultManager);
     }
 
+    // User operations
+    public static Map<String, User> getUsers() {
+        return users;
+    }
+
+    public static Map<String, User> getCustomers() {
+        return customers;
+    }
+
+    public static Map<String, User> getDeliveryPersons() {
+        return deliveryPersons;
+    }
+
+    public static Map<String, User> getManagers() {
+        return managers;
+    }
+
+    public static void addUser(User user) {
+        users.put(user.getId(), user);
+        switch (user.getRole().toLowerCase()) {
+            case "customer":
+                customers.put(user.getId(), user);
+                break;
+            case "delivery":
+                deliveryPersons.put(user.getId(), user);
+                break;
+            case "manager":
+                managers.put(user.getId(), user);
+                break;
+        }
+    }
+
 }
