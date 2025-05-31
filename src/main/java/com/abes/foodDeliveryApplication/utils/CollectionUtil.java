@@ -88,4 +88,12 @@ public class CollectionUtil {
         return orders.get(orderId);
     }
 
+    // Utility methods
+    public static void clearAllData() {
+        users.clear();
+        customers.clear();
+        deliveryPersons.clear();
+        inventory.clear();
+
+    }
 }
