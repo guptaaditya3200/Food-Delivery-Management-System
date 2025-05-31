@@ -497,4 +497,43 @@ public class MenuHandler {
             System.out.println("------------------------");
         }
     }
+    
+    private void completeOrder() throws InvalidOrderException {
+        System.out.print("Enter Order ID to complete: ");
+        String orderId = scanner.nextLine().trim();
+        
+        orderService.completeOrder(orderId);
+        System.out.println("Order completed successfully!");
+    }
+    
+    private void toggleAvailability() throws UserNotFoundException {
+        boolean newStatus = !currentUser.isAvailable();
+        userService.updateUserAvailability(currentUser.getId(), newStatus);
+        currentUser.setAvailable(newStatus);
+        
+        System.out.println("Availability updated. You are now " + 
+                          (newStatus ? "AVAILABLE" : "UNAVAILABLE") + " for deliveries.");
+    }
+    
+    private int getIntInput() {
+        while (true) {
+            try {
+                String input = scanner.nextLine().trim();
+                return Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.print("Please enter a valid number: ");
+            }
+        }
+    }
+    
+    private double getDoubleInput() {
+        while (true) {
+            try {
+                String input = scanner.nextLine().trim();
+                return Double.parseDouble(input);
+            } catch (NumberFormatException e) {
+                System.out.print("Please enter a valid number: ");
+            }
+        }
+    }
 }
