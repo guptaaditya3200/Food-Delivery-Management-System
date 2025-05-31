@@ -31,4 +31,15 @@ public class InputValidator {
         return quantity > 0;
     }
 
+    public static String getValidInput(Scanner scanner, String prompt, String errorMessage) {
+        String input;
+        do {
+            System.out.print(prompt);
+            input = scanner.nextLine().trim();
+            if (input.isEmpty()) {
+                System.out.println(errorMessage);
+            }
+        } while (input.isEmpty());
+        return input;
+    }
 }
